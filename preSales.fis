@@ -1,0 +1,74 @@
+[System]
+Name='preSales'
+Type='mamdani'
+Version=2.0
+NumInputs=3
+NumOutputs=1
+NumRules=27
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='measHome'
+Range=[0 6]
+NumMFs=3
+MF1='poor':'trapmf',[2.5 3 5 5]
+MF2='good':'trapmf',[1 1.5 2.5 3]
+MF3='veryGood':'trapmf',[0 0 1 1.5]
+
+[Input2]
+Name='expertAdvice'
+Range=[0 6]
+NumMFs=3
+MF1='poor':'trapmf',[2.5 3 5 5]
+MF2='good':'trapmf',[1 1.5 2.5 3]
+MF3='veryGood':'trapmf',[0 0 1 1.5]
+
+[Input3]
+Name='Design'
+Range=[0 6]
+NumMFs=3
+MF1='poor':'trapmf',[2.5 3 5 5]
+MF2='good':'trapmf',[1 1.5 2.5 3]
+MF3='veryGood':'trapmf',[0 0 1 1.5]
+
+[Output1]
+Name='pre-sales'
+Range=[0 100]
+NumMFs=4
+MF1='poor':'trapmf',[0 0 10 30]
+MF2='good':'trapmf',[10 30 40 60]
+MF3='veryGood':'trapmf',[40 60 70 90]
+MF4='excellent':'trapmf',[70 90 100 100]
+
+[Rules]
+1 1 1, 1 (1) : 1
+1 1 2, 1 (1) : 1
+1 1 3, 1 (1) : 1
+1 2 1, 1 (1) : 1
+1 2 2, 2 (1) : 1
+1 2 3, 2 (1) : 1
+1 3 1, 2 (1) : 1
+1 3 3, 3 (1) : 1
+2 1 1, 1 (1) : 1
+2 1 2, 2 (1) : 1
+2 1 3, 2 (1) : 1
+2 2 1, 2 (1) : 1
+2 2 2, 2 (1) : 1
+2 2 3, 3 (1) : 1
+2 3 1, 2 (1) : 1
+2 3 2, 3 (1) : 1
+2 3 3, 4 (1) : 1
+3 1 1, 1 (1) : 1
+3 1 2, 2 (1) : 1
+3 1 3, 3 (1) : 1
+3 2 1, 2 (1) : 1
+3 2 2, 3 (1) : 1
+3 2 3, 4 (1) : 1
+3 3 1, 3 (1) : 1
+3 3 2, 4 (1) : 1
+3 3 3, 4 (1) : 1
+1 3 2, 2 (1) : 1
